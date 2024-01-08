@@ -1,0 +1,72 @@
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    padding: 15px 0;
+    width: 95%;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+}
+
+#movieIndexInfo {
+    padding: 10px 15px;
+    width: 250px;
+}
+
+#main {
+    margin: 30px 10px;
+}
+
+#main img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+#title h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#aboutText p {
+    font-size: 1rem;
+}
+
+#footerDiv {
+    padding: 40px 0;
+}
+
+#smallTitle h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.socialMediaCard {
+    margin: 0 20px;
+}
+
+.socialMediaCard img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.socialMediaCard span {
+    margin-top: 10px;
+    font-size: 0.8rem;
+}
+
+.socialMediaCard:hover {
+    transform: scale(1.1);
+}

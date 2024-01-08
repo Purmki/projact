@@ -1,9 +1,41 @@
-  
-  
-  
+  const totalPages = 5;
+  let currentPage = 1;
+  const nextButton = document.querySelector('.page-link[aria-label="Next"]');
+  const previousButton = document.querySelector('.page-link[aria-label="Previous"]');
+  const fPageBtn = document.getElementById("fPageBtn");
+  const sPageBtn = document.getElementById("sPageBtn");
+  const tPageBtn = document.getElementById("tPageBtn");
+  const foPageBtn = document.getElementById("foPageBtn");
+  const lPageBtn = document.getElementById("lPageBtn");
   const movieArray = []
   let time="day"
-  twentyMoviesDisplay(1);
+  fPageBtn.addEventListener("click",()=>{ twentyMoviesDisplay(1)
+    fPageBtn.style.backgroundColor = "blue"})
+   sPageBtn.addEventListener("click",()=>{ twentyMoviesDisplay(2)
+   sPageBtn.style.backgroundColor = "blue"})
+   tPageBtn.addEventListener("click",()=>{ twentyMoviesDisplay(3)
+     tPageBtn.style.backgroundColor = "blue"})
+   foPageBtn.addEventListener("click",()=>{ twentyMoviesDisplay(4)
+     foPageBtn.style.backgroundColor = "blue"})
+   lPageBtn.addEventListener("click",()=>{ twentyMoviesDisplay(5)
+     lPageBtn.style.backgroundColor = "blue"})
+   previousButton.addEventListener('click', handlePreviousPage);
+   
+   
+   function handlePreviousPage() {
+     if (currentPage > 1) {
+       currentPage--;
+       twentyMoviesDisplay(currentPage);
+     }
+   }
+   nextButton.addEventListener('click', handleNextPage);
+   function handleNextPage() {
+     if (currentPage <totalPages){
+     currentPage++;
+     twentyMoviesDisplay(currentPage);
+   }
+ }
+  twentyMoviesDisplay(currentPage);
   const popularDayBtn= document.getElementById("popularDay")
   const popularWeekBtn= document.getElementById("popularWeek")
   const myButton = document.getElementById("myBtn");
@@ -12,6 +44,7 @@
       fetch(`https://api.themoviedb.org/3/trending/movie/${time}?&page=${pageNumber}&query=Jack+Reacher&api_key=bc1f09cc15ddc7d57d1d665f10e1e5a6`)
           .then(response => response.json())
           .then(data => {
+            currentPage = pageNumber;
               console.log(data);
               const container = document.getElementById("twentyContainer");
               container.innerHTML = "";
@@ -45,7 +78,15 @@
                 movieCard.appendChild(heartIconDiv); 
             
                 container.appendChild(movieCard); 
+
+                [fPageBtn, sPageBtn, tPageBtn, foPageBtn, lPageBtn].forEach((btn, index) => {
+                  btn.style.backgroundColor = index + 1 === currentPage ? "blue" : "";
+                });
               });
+
+          
+
+
               function saveFavorite(){
                 localStorage.setItem("movieArray",JSON.stringify(movieArray))
               }
@@ -75,9 +116,7 @@
           });
   }
 
-  myButton.addEventListener("click", () => {
-      twentyMoviesDisplay(myInput.value);
-  });
+
 
   function heartStyle(heartIcon, isMouseOver) {
       if (isMouseOver) {

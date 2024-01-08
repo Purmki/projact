@@ -1,168 +1,157 @@
-
-
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+.movieCard {
+  position: relative;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #a188c9;
+  display: flex;
+}
+
+.imageContainer {
+  width: 160px;
+  height: 300px;
+}
+
+.movieImage {
+  width: 110%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movieCard .imageContainer {
+  flex: 0 0 auto; 
+  margin-right: 15px; 
+}
+
+.movieDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15px;
+  flex: 1;
+}
+
+.movieOverview {
+  height: 160px;
+  width: 250px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  color: #211a1a;
+  flex: 1;
+  position: absolute;
+  left: 115px;
+  bottom: 120px;
+  margin-left: 150px;
+}
+
+.heartIcon {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  mix-blend-mode: multiply;
+  transition: transform 0.3s ease;
+  margin-left: 30px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  column-gap: 20%;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.page-item {
+  margin: 5px;
+}
+
+@media screen and (max-width: 650px) {
   header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    padding: 5px 0;
   }
-  
+
   .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .nav-links li {
     margin: 10px 0;
   }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #ffcc00;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    padding: 5px;
-  }
-  
-  #myInput {
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  #myBtn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #myBtn:hover {
-    background-color: #0056b3;
-  }
-  
-  #twentyContainer {
-    background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-  }
-  
+
   .movieCard {
-    margin: 10px;
-    width: 200px;
+    width: 100%;
   }
-  
+
   .movieImage {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+    border-radius: 0;
+    width: 190px;
   }
-  
-  .movieOverview {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-  }
-  
+
   .heartIcon {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    left: auto;
+    right: 10px;
+    bottom: 10px;
   }
-  
-  .imageContainer {
-    position: relative;
-  }
-  
-  .imageContainer:hover .movieOverview {
-    opacity: 1;
-  }
-  
-  .footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+
+  #myInput {
     width: 100%;
   }
-  
+
+  #myBtn,
+  #popularWeek,
+  #popularDay {
+    width: 100%;
+  }
+
   .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    column-gap: 0;
   }
-  
- 
-  @media (max-width: 600px) {
-    nav {
-      position: fixed;
-      top: 0;
-      left: -250px; 
-      width: 250px;
-      height: 100%;
-      background-color: #333;
-      overflow-x: hidden;
-      transition: 0.5s;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-    }
-  
-    .nav-links li {
-      margin: 10px 0;
-    }
-  
-    .nav-links a {
-      padding: 15px;
-      text-align: center;
-    }
-  
-    #menu-icon {
-      cursor: pointer;
-      display: block;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 2;
-    }
-  
-    #menu-icon:hover {
-      color: #ffcc00;
-    }
-  
-    #main-content {
-      transition: margin-left 0.5s;
-      padding: 20px;
-    }
-    
-    #main-content.open-sidebar {
-      margin-left: 250px;
-    }
-  }
+}

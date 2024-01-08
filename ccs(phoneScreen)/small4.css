@@ -1,0 +1,55 @@
+header {
+    padding: 10px 0;
+}
+
+.nav-links li {
+    margin: 0 5px;
+}
+
+.nav-links a {
+    font-size: 0.8rem;
+}
+
+.movieCard {
+    background-color: #ae9292;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.movieCard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movieImage {
+    width: 100%;
+    height: auto; 
+    max-width: none; /* Removed max-width */
+    left: 0; /* Removed positioning */
+    top: 0;
+}
+
+.movieCard p {
+    padding: 10px;
+    font-size: 1rem;
+    color: #0f0e0e;
+    text-align: left;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.movieCard hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+#savedContent {
+    padding: 10px;
+    margin: 15px 0;
+    background-color: #524848;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
